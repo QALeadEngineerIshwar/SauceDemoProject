@@ -23,12 +23,10 @@ public class TC_01_VerifyLoginPage extends baseclass
 		
 		Assert.assertEquals(ActualTitle, ExpectedTitle);
 		UtilityClassPackage4.ScreenshotClass.GetScreenshot(driver, ActualTitle);
-		
-		
-		
-		
-		
+			
 	}
+	
+	
 	
 	
 }

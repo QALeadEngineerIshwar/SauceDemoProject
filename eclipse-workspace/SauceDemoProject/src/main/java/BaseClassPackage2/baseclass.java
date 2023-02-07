@@ -6,9 +6,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import POMClassPackage1.SauceDemoLoginPage;
+import POMClassPackage1.SauceDemoLogoutPOM;
 
 public class baseclass 
 {
@@ -21,7 +23,7 @@ public class baseclass
 	
 	//3.@BeforeMethod tag with setup() method.
 	
-	@BeforeMethod()
+	@BeforeMethod
 	public void setup()
 	{
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Babarao Kishan Mise\\eclipse-workspace\\SauceDemoProject\\Driver\\chromedriver.exe");
@@ -34,7 +36,7 @@ public class baseclass
 		log.info("window is maximized");
 		
 		driver.get("https://www.saucedemo.com/");               // URL is opened
-		log.info("URL is opend");
+		log.info("URL is opened");
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);       // wait applied
 		
@@ -42,6 +44,7 @@ public class baseclass
 		
 		// 4. pom class instance or object is created.
 		
+		// first pom page instance
 		SauceDemoLoginPage SDLP = new SauceDemoLoginPage(driver);
 		
 		SDLP.sendusername();
@@ -53,12 +56,19 @@ public class baseclass
 		SDLP.clickonloginbutton();
 		log.info("clicked on login button");
 		
+		
+		// second pom page instance created.
+		
+		SauceDemoLogoutPOM SDLPOM = new SauceDemoLogoutPOM(driver);
+		SDLPOM.logout();
+		log.info("logged out from the application");
 			
 			
 	}
 	
 	// 5.
 	
+	@AfterMethod
 	public void tearDown()
 	{
 		driver.quit();
