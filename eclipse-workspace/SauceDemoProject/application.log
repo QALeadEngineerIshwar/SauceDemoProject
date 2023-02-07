@@ -1,0 +1,6 @@
+2022-12-31 07:54:18,225  INFO [main] SauceDemoProject:31 - Browser is opened
+2022-12-31 07:54:18,345  INFO [main] SauceDemoProject:34 - window is maximized
+2022-12-31 07:54:18,600  INFO [main] SauceDemoProject:37 - URL is opend
+2022-12-31 07:54:18,756  INFO [main] SauceDemoProject:48 - username is entered
+2022-12-31 07:54:18,811  INFO [main] SauceDemoProject:51 - password is entered
+2022-12-31 07:54:18,893  INFO [main] SauceDemoProject:54 - clicked on login button
